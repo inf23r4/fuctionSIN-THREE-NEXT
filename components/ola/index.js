@@ -15,6 +15,7 @@ const Ola = () => {
   return (
     <div
       ref={currentRef}
+      style={{ width: "100%", height: "100vh" }}
     ></div>
   )
 }

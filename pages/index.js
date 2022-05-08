@@ -1,5 +1,10 @@
 import Head from 'next/head'
-import Ola from "../components/ola"
+import dynamic from 'next/dynamic'
+
+const DynamicComponentWithNoSSR = dynamic(
+  () => import('../components/ola'),
+  { ssr: false }
+)
 
 export default function Home() {
   return (
@@ -11,7 +16,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <Ola/>
+        <DynamicComponentWithNoSSR/>
       </main>
     </div>
   )
